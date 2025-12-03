@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Fotografía - Centro Cultural Fabián Órdenes Silva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      color: #f5f5f5;
+      background-color: #111;
+    }
+    header {
+      background: #000;
+      color: #f5c542;
+      padding: 15px 20px;
+    }
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logos-top {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .logos-top img {
+      height: 60px;
+      width: auto;
+    }
+    .header-text {
+      text-align: center;
+      flex: 1;
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+    .header-text p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #f8e29c;
+    }
+
+    nav {
+      background: #181818;
+      border-bottom: 2px solid #f5c542;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      font-size: 14px;
+    }
+    nav a:hover {
+      background-color: #262626;
+      color: #f5c542;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 0 15px;
+    }
+    section {
+      background: #181818;
+      border-radius: 10px;
+      padding: 25px 20px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      border-left: 4px solid #f5c542;
+    }
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #f5c542;
+      border-bottom: 1px solid #333;
+      padding-bottom: 8px;
+    }
+    section p {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      border: 2px solid #f5c542;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .gallery-item h3 {
+      padding: 10px;
+      font-size: 15px;
+      color: #f5c542;
+    }
+
+    .activity-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 24px;
+      background: #f5c542;
+      color: #111;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .activity-button:hover {
+      background: #ffd45c;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+      }
+      .logos-top {
+        justify-content: center;
+      }
+      .logos-top img {
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logos-top">
+        <img src="imagen/logofabian.jpg" alt="Logo Fabián">
+        <img src="imagen/logoidc.jpg" alt="Logo IDC">
+        <img src="imagen/estibadores.jpg" alt="Logo Estibadores">
+      </div>
+      <div class="header-text">
+        <h1>Área de Fotografía</h1>
+        <p>Memoria visual del puerto y de su gente.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="teatro.html">Teatro</a></li>
+      <li><a href="musica.html">Música</a></li>
+      <li><a href="danza.html">Danza</a></li>
+      <li><a href="literatura.html">Literatura</a></li>
+      <li><a href="pintura.html">Pintura</a></li>
+      <li><a href="cine.html">Cine</a></li>
+      <li><a href="fotografia.html">Fotografía</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>Fotografía en el Centro Cultural</h2>
+      <p>
+        La fotografía nos permite detener el tiempo y guardar la memoria del trabajo portuario,
+        de las luchas y de la vida cotidiana en el territorio. Cada imagen es un fragmento de historia
+        que se comparte con la comunidad.
+      </p>
+      <p>
+        En este espacio se encuentran fotógrafas, fotógrafos y personas que recién comienzan,
+        todos aportando miradas distintas sobre el mismo lugar.
+      </p>
+
+      <h2>Talleres y proyectos fotográficos</h2>
+      <p>
+        Los talleres abordan desde lo técnico hasta lo creativo, con ejercicios en el barrio,
+        en el puerto y en el propio Centro Cultural.
+      </p>
+      <ul>
+        <li>Taller de fotografía digital básica y avanzada.</li>
+        <li>Introducción a la fotografía analógica y al archivo familiar.</li>
+        <li>Salidas fotográficas por el territorio portuario.</li>
+        <li>Muestras colectivas y proyectos de documentación comunitaria.</li>
+      </ul>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="imagen/fotografia.jpg" alt="Momentos capturados">
+          <h3>Momentos</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="imagen/fotografia1.jpg" alt="Perspectivas fotográficas">
+          <h3>Perspectivas</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="imagen/fondos.jpg" alt="Memoria visual del territorio">
+          <h3>Memoria visual</h3>
+        </div>
+      </div>
+
+      <a href="index.html#contacto" class="activity-button">Quiero aprender Fotografía</a>
+    </section>
+  </div>
+
+  <footer>
+    &copy; Centro Cultural Fabián Órdenes Silva
+  </footer>
+</body>
+</html>
