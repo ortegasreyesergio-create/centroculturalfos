@@ -53,7 +53,7 @@
     nav a {
       color: #f5f5f5;
       text-decoration: none;
-      margin: 0 10px;
+      margin: 0 8px;
       font-size: 14px;
     }
     nav a:hover {
@@ -77,20 +77,45 @@
       margin: 5px 0;
       font-size: 14px;
     }
-    .imagenes-principales {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .imagenes-principales img {
-      max-width: 40%;
-      height: auto;
-      border-radius: 6px;
+
+    /* Carrusel */
+    .carrusel {
+      position: relative;
+      max-width: 100%;
+      margin: 20px auto;
+      overflow: hidden;
+      border-radius: 8px;
       border: 2px solid #f5c542;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px rgba(0,0,0,0.8);
     }
+    .carrusel img {
+      width: 100%;
+      height: auto;
+      display: none;
+    }
+    .carrusel img.activa {
+      display: block;
+    }
+    .carrusel-controles {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+    }
+    .carrusel-punto {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      border: 1px solid #f5c542;
+      background: transparent;
+      cursor: pointer;
+    }
+    .carrusel-punto.activo {
+      background: #f5c542;
+    }
+
     section {
       margin-top: 30px;
     }
@@ -165,9 +190,6 @@
       .hero h2 {
         font-size: 18px;
       }
-      .imagenes-principales img {
-        max-width: 90%;
-      }
       .contacto-datos {
         flex-direction: column;
         align-items: flex-start;
@@ -215,10 +237,16 @@
         Afiche del documental Clotario y actividades formativas con escuelas, familias y comunidad portuaria.
       </p>
 
-      <div class="imagenes-principales">
-        <img src="imagen/clota1.jpg" alt="Afiche CLOTARIO, el documental">
-        <img src="imagen/escuela3.jpg" alt="Escuela comunitaria 3">
-        <img src="imagen/escuela4.jpg" alt="Escuela comunitaria 4">
+      <!-- Carrusel de fotos -->
+      <div class="carrusel" id="carrusel">
+        <img src="imagen/clota1.jpg" alt="Documental CLOTARIO" class="activa">
+        <img src="imagen/escuela3.jpg" alt="Talleres comunitarios">
+        <img src="imagen/escuela4.jpg" alt="Formación y artes">
+        <div class="carrusel-controles">
+          <div class="carrusel-punto activo" data-index="0"></div>
+          <div class="carrusel-punto" data-index="1"></div>
+          <div class="carrusel-punto" data-index="2"></div>
+        </div>
       </div>
 
       <p>
@@ -244,27 +272,16 @@
     </section>
 
     <section id="talleres">
-      <h3>Talleres y formación</h3>
+      <h3>Áreas de trabajo</h3>
       <ul>
-        <li>Teatro y expresión corporal para distintas edades.</li>
-        <li>Danza y movimiento comunitario.</li>
-        <li>Música, canto y ensambles instrumentales.</li>
-        <li>Fotografía, cine y audiovisual comunitario.</li>
-        <li>Lectura, escritura creativa y mediación de lectura.</li>
-        <li>Talleres de pintura y artes visuales.</li>
+        <li><a href="teatro.html" style="color:#f5c542;">Teatro y expresión corporal</a></li>
+        <li><a href="danza.html" style="color:#f5c542;">Danza y movimiento comunitario</a></li>
+        <li><a href="musica.html" style="color:#f5c542;">Música, canto y ensambles</a></li>
+        <li><a href="cine.html" style="color:#f5c542;">Cine y audiovisual comunitario</a></li>
+        <li><a href="literatura.html" style="color:#f5c542;">Literatura y escritura creativa</a></li>
+        <li><a href="pintura.html" style="color:#f5c542;">Pintura y artes visuales</a></li>
+        <li><a href="fotografia.html" style="color:#f5c542;">Fotografía y memoria visual</a></li>
       </ul>
-    </section>
-
-    <section id="actividades">
-      <h3>Actividades y programación</h3>
-      <p>
-        Durante el año realizamos funciones de teatro, ciclos de cine, recitales, exposiciones,
-        conversatorios y jornadas de memoria vinculadas al mundo portuario y al territorio.
-      </p>
-      <p>
-        El calendario se construye junto a organizaciones sociales, sindicatos, centros de padres,
-        agrupaciones juveniles y personas interesadas en activar la cultura local.
-      </p>
     </section>
 
     <section id="contacto">
@@ -306,20 +323,46 @@
   </footer>
 
   <script>
-    // Contador de visitas usando localStorage (por navegador/dispositivo)
+    // Contador de visitas (por navegador/dispositivo)
     (function() {
       var key = 'ccfos_visit_count';
       var count = localStorage.getItem(key);
-      if (!count) {
-        count = 0;
-      }
+      if (!count) count = 0;
       count = parseInt(count, 10) + 1;
       localStorage.setItem(key, count);
       var span = document.getElementById('visit-count');
-      if (span) {
-        span.textContent = count;
+      if (span) span.textContent = count;
+    })();
+
+    // Carrusel sencillo
+    (function() {
+      var imagenes = document.querySelectorAll('#carrusel img');
+      var puntos = document.querySelectorAll('.carrusel-punto');
+      var indice = 0;
+
+      function mostrar(n) {
+        imagenes.forEach(function(img, i) {
+          img.classList.toggle('activa', i === n);
+        });
+        puntos.forEach(function(pt, i) {
+          pt.classList.toggle('activo', i === n);
+        });
+        indice = n;
       }
+
+      puntos.forEach(function(pt) {
+        pt.addEventListener('click', function() {
+          var n = parseInt(this.getAttribute('data-index'), 10);
+          mostrar(n);
+        });
+      });
+
+      setInterval(function() {
+        var siguiente = (indice + 1) % imagenes.length;
+        mostrar(siguiente);
+      }, 5000); // cambia cada 5 segundos
     })();
   </script>
 </body>
 </html>
+
