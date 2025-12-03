@@ -39,19 +39,25 @@
       margin: 5px 0 0;
       font-size: 14px;
     }
+    .subtexto-comunidad {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #f8e29c;
+    }
     nav {
       background: #181818;
       padding: 10px 0;
       text-align: center;
+      border-bottom: 2px solid #f5c542;
     }
     nav a {
-      color: #f5c542;
+      color: #f5f5f5;
       text-decoration: none;
       margin: 0 10px;
       font-size: 14px;
     }
     nav a:hover {
-      text-decoration: underline;
+      color: #f5c542;
     }
     main {
       max-width: 1000px;
@@ -100,6 +106,12 @@
     }
     ul {
       padding-left: 18px;
+    }
+    .contador-visitas {
+      margin-top: 15px;
+      font-size: 12px;
+      color: #ccc;
+      text-align: right;
     }
     footer {
       background: #000;
@@ -176,19 +188,23 @@
     <div class="titulo-header">
       <h1>Centro Cultural Fabián Órdenes Silva</h1>
       <p>Cultura, memoria y artes para la comunidad portuaria.</p>
+      <p class="subtexto-comunidad">
+        Espacio abierto para vecinas, vecinos, amistades y familias de las y los trabajadores portuarios,
+        y para toda persona que quiera sumarse a la vida cultural del territorio.
+      </p>
     </div>
   </header>
 
   <nav>
-    <a href="#quienes-somos">Quiénes somos</a>
-    <a href="#talleres">Talleres</a>
-    <a href="#actividades">Actividades</a>
-    <a href="#musica">Música</a>
-    <a href="#literatura">Literatura</a>
-    <a href="#cine">Cine</a>
-    <a href="#fotografia">Fotografía</a>
-    <a href="#pintura">Pintura</a>
+    <a href="index.html">Inicio</a>
+    <a href="actividades.html">Actividades</a>
     <a href="teatro.html">Teatro</a>
+    <a href="musica.html">Música</a>
+    <a href="danza.html">Danza</a>
+    <a href="literatura.html">Literatura</a>
+    <a href="pintura.html">Pintura</a>
+    <a href="cine.html">Cine</a>
+    <a href="fotografia.html">Fotografía</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
@@ -209,28 +225,33 @@
         Te invitamos a la única presentación en la sede del Sindicato Profesional de Estibadores
         Quintero‑Ventanas, un encuentro para compartir cine, memoria y conversación con la familia portuaria.
       </p>
+
+      <div class="contador-visitas">
+        Visitas a este sitio desde este navegador: <span id="visit-count">0</span>
+      </div>
     </section>
 
     <section id="quienes-somos">
       <h3>Quiénes somos</h3>
       <p>
         El Centro Cultural Fabián Órdenes Silva nace como un espacio independiente y autogestionado,
-        levantado por trabajadores, artistas y vecinas del sector.
+        levantado por trabajadores, artistas, vecinas, vecinos y familias del sector.
       </p>
       <p>
         Nuestro objetivo es sostener un lugar de encuentro para la creación, la formación y la memoria,
-        con énfasis en la historia obrera y portuaria.
+        con énfasis en la historia obrera y portuaria y en la vida cotidiana de la comunidad.
       </p>
     </section>
 
     <section id="talleres">
       <h3>Talleres y formación</h3>
       <ul>
-        <li>Teatro y actuación para jóvenes y personas adultas.</li>
-        <li>Danza y movimiento para todas las edades.</li>
+        <li>Teatro y expresión corporal para distintas edades.</li>
+        <li>Danza y movimiento comunitario.</li>
         <li>Música, canto y ensambles instrumentales.</li>
         <li>Fotografía, cine y audiovisual comunitario.</li>
         <li>Lectura, escritura creativa y mediación de lectura.</li>
+        <li>Talleres de pintura y artes visuales.</li>
       </ul>
     </section>
 
@@ -241,39 +262,9 @@
         conversatorios y jornadas de memoria vinculadas al mundo portuario y al territorio.
       </p>
       <p>
-        Abrimos el espacio para organizaciones sociales, sindicatos y colectivos barriales
-        que necesiten un lugar para reunirse y desarrollar sus iniciativas.
+        El calendario se construye junto a organizaciones sociales, sindicatos, centros de padres,
+        agrupaciones juveniles y personas interesadas en activar la cultura local.
       </p>
-    </section>
-
-    <section id="musica">
-      <h3>Música</h3>
-      <p>Conciertos íntimos, lanzamientos y ensayos abiertos con bandas y solistas del territorio.</p>
-    </section>
-
-    <section id="literatura">
-      <h3>Literatura</h3>
-      <p>Lecturas colectivas, clubes de libros y escritura creativa vinculada a memoria, trabajo y barrio.</p>
-    </section>
-
-    <section id="cine">
-      <h3>Cine</h3>
-      <p>Proyecciones de cine documental y de ficción que dialogan con la historia sindical y portuaria.</p>
-    </section>
-
-    <section id="fotografia">
-      <h3>Fotografía</h3>
-      <p>Muestras y archivos visuales que rescatan la vida cotidiana y el trabajo en los muelles y el borde costero.</p>
-    </section>
-
-    <section id="pintura">
-      <h3>Pintura y artes visuales</h3>
-      <p>Exposiciones y talleres donde artistas locales comparten procesos creativos con la comunidad.</p>
-    </section>
-
-    <section id="teatro">
-      <h3>Teatro</h3>
-      <p>Obras, lecturas dramatizadas y laboratorios escénicos que ponen en escena la memoria y las luchas populares.</p>
     </section>
 
     <section id="contacto">
@@ -313,5 +304,22 @@
   <footer>
     &copy; Centro Cultural Fabián Órdenes Silva
   </footer>
+
+  <script>
+    // Contador de visitas usando localStorage (por navegador/dispositivo)
+    (function() {
+      var key = 'ccfos_visit_count';
+      var count = localStorage.getItem(key);
+      if (!count) {
+        count = 0;
+      }
+      count = parseInt(count, 10) + 1;
+      localStorage.setItem(key, count);
+      var span = document.getElementById('visit-count');
+      if (span) {
+        span.textContent = count;
+      }
+    })();
+  </script>
 </body>
 </html>
