@@ -20,11 +20,11 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 20px;
+      gap: 24px; /* 20% más grande aprox. */
       margin-bottom: 5px;
     }
     .barra-logos img {
-      height: 60px;
+      height: 72px; /* antes 60px, ahora 20% más grande */
       width: auto;
     }
     .titulo-header {
@@ -79,7 +79,7 @@
       margin-top: 20px;
     }
     .imagenes-principales img {
-      max-width: 100%;
+      max-width: 60%; /* 40% más pequeño que ocupar todo el ancho aprox. */
       height: auto;
       border-radius: 6px;
       border: 2px solid #f5c542;
@@ -118,13 +118,16 @@
         flex-wrap: wrap;
       }
       .barra-logos img {
-        height: 50px;
+        height: 60px;
       }
       .titulo-header h1 {
         font-size: 20px;
       }
       .hero h2 {
         font-size: 18px;
+      }
+      .imagenes-principales img {
+        max-width: 90%;
       }
     }
   </style>
@@ -146,18 +149,35 @@
     <a href="#quienes-somos">Quiénes somos</a>
     <a href="#talleres">Talleres</a>
     <a href="#actividades">Actividades</a>
+    <a href="#musica">Música</a>
+    <a href="#literatura">Literatura</a>
+    <a href="#cine">Cine</a>
+    <a href="#fotografia">Fotografía</a>
+    <a href="#pintura">Pintura</a>
+    <a href="#teatro">Teatro</a>
     <a href="#contacto">Contacto</a>
   </nav>
 
   <main>
-    <section class="hero">
-      <h2>Nuestro destacado</h2>
-      <p>Afiche principal del documental y las actividades del Centro Cultural.</p>
+    <section class="hero" id="destacado">
+      <h2>Destacado: CLOTARIO, el documental</h2>
+      <p>
+        “Clotario, el documental” recorre la vida y la lucha sindical de Clotario Blest,
+        uno de los fundadores de la ANEF y de la CUT, figura clave del movimiento obrero chileno.[web:23][web:39][web:30]
+      </p>
+      <p>
+        Su historia inspira a nuevas generaciones de trabajadores y trabajadoras que
+        siguen defendiendo derechos y dignidad en los puertos y en todo el país.[web:24][web:33][web:36]
+      </p>
 
-      <!-- Afiche destacado CLOTARIO -->
       <div class="imagenes-principales">
-        <img src="imagen/clota1.jpg" alt="Afiche CLOTARIO, documental de la comunidad portuaria">
+        <img src="imagen/clota1.jpg" alt="Afiche CLOTARIO, el documental">
       </div>
+
+      <p>
+        Te invitamos a la única presentación en la sede del Sindicato Profesional de Estibadores
+        Quintero‑Ventanas, un encuentro para compartir cine, memoria y conversación con la familia portuaria.[web:25][web:31][web:28]
+      </p>
     </section>
 
     <section id="quienes-somos">
@@ -176,7 +196,7 @@
       <h3>Talleres y formación</h3>
       <ul>
         <li>Teatro y actuación para jóvenes y personas adultas.</li>
-        <li>Talleres de danza y movimiento para todas las edades.</li>
+        <li>Danza y movimiento para todas las edades.</li>
         <li>Música, canto y ensambles instrumentales.</li>
         <li>Fotografía, cine y audiovisual comunitario.</li>
         <li>Lectura, escritura creativa y mediación de lectura.</li>
@@ -190,26 +210,36 @@
         conversatorios y jornadas de memoria vinculadas al mundo portuario y al territorio.
       </p>
       <p>
-        También abrimos el espacio para organizaciones sociales, sindicatos y colectivos barriales
+        Abrimos el espacio para organizaciones sociales, sindicatos y colectivos barriales
         que necesiten un lugar para reunirse y desarrollar sus iniciativas.
       </p>
     </section>
 
-    <section id="contacto">
-      <h3>Contacto</h3>
-      <p class="contacto">
-        Dirección: (agregar dirección física del centro cultural).<br>
-        Correo: contacto@centroculturalfos.cl<br>
-        Teléfono: +56 9 0000 0000
-      </p>
-      <p class="contacto">
-        Muy pronto compartiremos nuestras redes sociales y un calendario detallado de actividades.
-      </p>
+    <section id="musica">
+      <h3>Música</h3>
+      <p>Conciertos íntimos, lanzamientos de discos y ensayos abiertos con bandas y solistas del territorio.[web:38]</p>
     </section>
-  </main>
 
-  <footer>
-    &copy; Centro Cultural Fabián Órdenes Silva
-  </footer>
-</body>
-</html>
+    <section id="literatura">
+      <h3>Literatura</h3>
+      <p>Lecturas colectivas, clubes de libros y escritura creativa vinculada a memoria, trabajo y barrio.[web:26]</p>
+    </section>
+
+    <section id="cine">
+      <h3>Cine</h3>
+      <p>Proyecciones de cine documental y de ficción que dialogan con la historia sindical y portuaria.[web:24][web:39]</p>
+    </section>
+
+    <section id="fotografia">
+      <h3>Fotografía</h3>
+      <p>Muestras y archivos visuales que rescatan la vida cotidiana y el trabajo en los muelles y el borde costero.[web:26]</p>
+    </section>
+
+    <section id="pintura">
+      <h3>Pintura y artes visuales</h3>
+      <p>Exposiciones y talleres donde artistas locales comparten procesos creativos con la comunidad.[web:26]</p>
+    </section>
+
+    <section id="teatro">
+      <h3>Teatro</h3>
+      <p>Obras, lecturas dramatizadas y laboratorios escénicos que ponen en escena la memoria y las
