@@ -56,6 +56,21 @@
     ul {
       padding-left: 18px;
     }
+    .galeria {
+      margin-top: 25px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .galeria img {
+      max-width: 30%;
+      min-width: 220px;
+      height: auto;
+      border-radius: 6px;
+      border: 2px solid #f5c542;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    }
     .volver {
       margin-top: 30px;
       text-align: center;
@@ -74,6 +89,11 @@
       text-align: center;
       padding: 10px;
       font-size: 12px;
+    }
+    @media (max-width: 600px) {
+      .galeria img {
+        max-width: 90%;
+      }
     }
   </style>
 </head>
@@ -104,18 +124,15 @@
       <li>Taller de actuación para jóvenes y personas adultas.</li>
       <li>Laboratorio de creación escénica con enfoque comunitario.</li>
       <li>Entrenamiento en voz, cuerpo y presencia escénica.</li>
-      <li>Instancias de lectura dramatizada y escritura teatral.</li>
+      <li>Lecturas dramatizadas y ejercicios de escritura teatral.</li>
     </ul>
 
-    <h2>Funciones y muestras</h2>
-    <p>
-      A lo largo del año realizamos muestras de procesos, funciones abiertas y temporadas breves,
-      siempre en diálogo con las organizaciones sociales y sindicatos del territorio.
-    </p>
-    <p>
-      También articulamos funciones especiales para escuelas, sindicatos y agrupaciones que
-      quieran acercarse al teatro como herramienta de memoria y organización.
-    </p>
+    <h2>Galería de teatro</h2>
+    <div class="galeria">
+      <img src="imagen/teatro1.jpg" alt="Ensayo de teatro 1">
+      <img src="imagen/teatro2.jpg" alt="Ensayo de teatro 2">
+      <img src="imagen/teatro3.jpg" alt="Presentación de teatro en el Centro Cultural">
+    </div>
 
     <div class="volver">
       <a href="index.html">&larr; Volver al inicio</a>
