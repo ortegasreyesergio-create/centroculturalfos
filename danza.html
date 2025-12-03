@@ -1,1 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Danza - Centro Cultural Fabián Órdenes Silva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.8;
+      color: #f5f5f5;
+      background-color: #111;
+    }
+    header {
+      background: #000;
+      color: #f5c542;
+      padding: 15px 20px;
+    }
+    .header-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logos-top {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+    .logos-top img {
+      height: 60px;
+      width: auto;
+    }
+    .header-text {
+      text-align: center;
+      flex: 1;
+    }
+    .header-text h1 {
+      margin: 0;
+      font-size: 24px;
+      letter-spacing: 1px;
+    }
+    .header-text p {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #f8e29c;
+    }
+
+    nav {
+      background: #181818;
+      border-bottom: 2px solid #f5c542;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    nav a {
+      color: #f5f5f5;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      font-size: 14px;
+    }
+    nav a:hover {
+      background-color: #262626;
+      color: #f5c542;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto 40px;
+      padding: 0 15px;
+    }
+    section {
+      background: #181818;
+      border-radius: 10px;
+      padding: 25px 20px 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      border-left: 4px solid #f5c542;
+    }
+    section h2 {
+      font-size: 22px;
+      margin-bottom: 15px;
+      color: #f5c542;
+      border-bottom: 1px solid #333;
+      padding-bottom: 8px;
+    }
+    section p {
+      font-size: 14px;
+      margin-bottom: 14px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .gallery-item {
+      background: #222;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.7);
+      border: 2px solid #f5c542;
+      text-align: center;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .gallery-item h3 {
+      padding: 10px;
+      font-size: 15px;
+      color: #f5c542;
+    }
+
+    .activity-button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 10px 24px;
+      background: #f5c542;
+      color: #111;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .activity-button:hover {
+      background: #ffd45c;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+      margin-top: 30px;
+    }
+
+    @media (max-width: 600px) {
+      .header-content {
+        flex-direction: column;
+      }
+      .logos-top {
+        justify-content: center;
+      }
+      .logos-top img {
+        height: 50px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <div class="logos-top">
+        <img src="imagen/logofabian.jpg" alt="Logo Fabián">
+        <img src="imagen/logoidc.jpg" alt="Logo IDC">
+        <img src="imagen/estibadores.jpg" alt="Logo Estibadores">
+      </div>
+      <div class="header-text">
+        <h1>Área de Danza</h1>
+        <p>Movimiento, memoria y encuentro para todas las edades.</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="actividades.html">Actividades</a></li>
+      <li><a href="teatro.html">Teatro</a></li>
+      <li><a href="musica.html">Música</a></li>
+      <li><a href="danza.html">Danza</a></li>
+      <li><a href="literatura.html">Literatura</a></li>
+      <li><a href="pintura.html">Pintura</a></li>
+      <li><a href="cine.html">Cine</a></li>
+      <li><a href="fotografia.html">Fotografía</a></li>
+      <li><a href="index.html#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>Danza en el Centro Cultural</h2>
+      <p>
+        La danza en el Centro Cultural Fabián Órdenes Silva es un espacio para habitar el cuerpo,
+        cuidar la memoria y celebrar la diversidad de movimientos que existen en la comunidad.
+      </p>
+      <p>
+        Hay lugar para niñas, niños, jóvenes y personas adultas: desde quienes se acercan por
+        primera vez a la danza, hasta quienes ya traen experiencia y buscan un espacio colectivo
+        donde seguir creando.
+      </p>
+
+      <h2>Talleres y estilos</h2>
+      <p>
+        Los talleres combinan técnica y juego, siempre con cuidado del cuerpo y respeto por los
+        ritmos de cada persona.
+      </p>
+      <ul>
+        <li>Danza contemporánea y creación colectiva.</li>
+        <li>Danza folclórica y bailes tradicionales.</li>
+        <li>Danza sensible y movimiento libre.</li>
+        <li>Espacios de muestra y presentaciones abiertas a la comunidad.</li>
+      </ul>
+
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="imagen/danza.jpg" alt="Taller de movimiento">
+          <h3>Movimiento</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="imagen/danza1.jpg" alt="Expresión corporal">
+          <h3>Expresión</h3>
+        </div>
+        <div class="gallery-item">
+          <img src="imagen/danza2.jpg" alt="Presentación de danza">
+          <h3>Armonía</h3>
+        </div>
+      </div>
+
+      <a href="index.html#contacto" class="activity-button">Quiero aprender Danza</a>
+    </section>
+  </div>
+
+  <footer>
+    &copy; Centro Cultural Fabián Órdenes Silva
+  </footer>
+</body>
+</html>
 
