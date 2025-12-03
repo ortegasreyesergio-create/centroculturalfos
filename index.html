@@ -20,11 +20,11 @@
       display: flex;
       justify-content: flex-start;
       align-items: center;
-      gap: 24px; /* 20% más grande aprox. */
+      gap: 24px;
       margin-bottom: 5px;
     }
     .barra-logos img {
-      height: 72px; /* antes 60px, ahora 20% más grande */
+      height: 72px;
       width: auto;
     }
     .titulo-header {
@@ -79,7 +79,7 @@
       margin-top: 20px;
     }
     .imagenes-principales img {
-      max-width: 60%; /* 40% más pequeño que ocupar todo el ancho aprox. */
+      max-width: 40%;
       height: auto;
       border-radius: 6px;
       border: 2px solid #f5c542;
@@ -112,6 +112,33 @@
       margin-top: 10px;
       font-size: 13px;
     }
+    .contacto strong {
+      color: #f5c542;
+    }
+    .contacto-datos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: center;
+    }
+    .contacto-texto {
+      flex: 1 1 220px;
+    }
+    .contacto-qr {
+      flex: 0 0 160px;
+      text-align: center;
+    }
+    .contacto-qr img {
+      max-width: 140px;
+      height: auto;
+      border-radius: 6px;
+      border: 2px solid #f5c542;
+      background: #fff;
+    }
+    .contacto-qr p {
+      font-size: 12px;
+      margin-top: 6px;
+    }
     @media (max-width: 600px) {
       .barra-logos {
         justify-content: center;
@@ -128,6 +155,13 @@
       }
       .imagenes-principales img {
         max-width: 90%;
+      }
+      .contacto-datos {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contacto-qr {
+        text-align: left;
       }
     }
   </style>
@@ -160,23 +194,20 @@
 
   <main>
     <section class="hero" id="destacado">
-      <h2>Destacado: CLOTARIO, el documental</h2>
+      <h2>Destacados del Centro Cultural</h2>
       <p>
-        “Clotario, el documental” recorre la vida y la lucha sindical de Clotario Blest,
-        uno de los fundadores de la ANEF y de la CUT, figura clave del movimiento obrero chileno.[web:23][web:39][web:30]
-      </p>
-      <p>
-        Su historia inspira a nuevas generaciones de trabajadores y trabajadoras que
-        siguen defendiendo derechos y dignidad en los puertos y en todo el país.[web:24][web:33][web:36]
+        Afiche del documental Clotario y actividades formativas con escuelas, familias y comunidad portuaria.
       </p>
 
       <div class="imagenes-principales">
         <img src="imagen/clota1.jpg" alt="Afiche CLOTARIO, el documental">
+        <img src="imagen/escuela3.jpg" alt="Escuela comunitaria 3">
+        <img src="imagen/escuela4.jpg" alt="Escuela comunitaria 4">
       </div>
 
       <p>
         Te invitamos a la única presentación en la sede del Sindicato Profesional de Estibadores
-        Quintero‑Ventanas, un encuentro para compartir cine, memoria y conversación con la familia portuaria.[web:25][web:31][web:28]
+        Quintero‑Ventanas, un encuentro para compartir cine, memoria y conversación con la familia portuaria.
       </p>
     </section>
 
@@ -217,29 +248,71 @@
 
     <section id="musica">
       <h3>Música</h3>
-      <p>Conciertos íntimos, lanzamientos de discos y ensayos abiertos con bandas y solistas del territorio.[web:38]</p>
+      <p>Conciertos íntimos, lanzamientos y ensayos abiertos con bandas y solistas del territorio.</p>
     </section>
 
     <section id="literatura">
       <h3>Literatura</h3>
-      <p>Lecturas colectivas, clubes de libros y escritura creativa vinculada a memoria, trabajo y barrio.[web:26]</p>
+      <p>Lecturas colectivas, clubes de libros y escritura creativa vinculada a memoria, trabajo y barrio.</p>
     </section>
 
     <section id="cine">
       <h3>Cine</h3>
-      <p>Proyecciones de cine documental y de ficción que dialogan con la historia sindical y portuaria.[web:24][web:39]</p>
+      <p>Proyecciones de cine documental y de ficción que dialogan con la historia sindical y portuaria.</p>
     </section>
 
     <section id="fotografia">
       <h3>Fotografía</h3>
-      <p>Muestras y archivos visuales que rescatan la vida cotidiana y el trabajo en los muelles y el borde costero.[web:26]</p>
+      <p>Muestras y archivos visuales que rescatan la vida cotidiana y el trabajo en los muelles y el borde costero.</p>
     </section>
 
     <section id="pintura">
       <h3>Pintura y artes visuales</h3>
-      <p>Exposiciones y talleres donde artistas locales comparten procesos creativos con la comunidad.[web:26]</p>
+      <p>Exposiciones y talleres donde artistas locales comparten procesos creativos con la comunidad.</p>
     </section>
 
     <section id="teatro">
       <h3>Teatro</h3>
-      <p>Obras, lecturas dramatizadas y laboratorios escénicos que ponen en escena la memoria y las
+      <p>Obras, lecturas dramatizadas y laboratorios escénicos que ponen en escena la memoria y las luchas populares.</p>
+    </section>
+
+    <section id="contacto">
+      <h3>Contacto</h3>
+      <div class="contacto-datos">
+        <div class="contacto-texto">
+          <p class="contacto">
+            <strong>Sitio web:</strong><br>
+            <a href="https://ortegasreyesergio-create.github.io/centroculturalfos/"
+               style="color:#f5c542;" target="_blank">
+              https://ortegasreyesergio-create.github.io/centroculturalfos/
+            </a>
+          </p>
+          <p class="contacto">
+            <strong>Dirección:</strong><br>
+            El Mirador 788, Chocota, Puchuncaví, Valparaíso, Chile.
+          </p>
+          <p class="contacto">
+            <strong>Teléfono:</strong><br>
+            +56 9 7677 2053
+          </p>
+          <p class="contacto">
+            <strong>Correo electrónico:</strong><br>
+            <a href="mailto:centroculturalfabianordenes@gmail.com" style="color:#f5c542;">
+              centroculturalfabianordenes@gmail.com
+            </a>
+          </p>
+        </div>
+        <div class="contacto-qr">
+          <!-- Sube una imagen llamada qr.png a la carpeta imagen -->
+          <img src="imagen/qr.png" alt="Código QR sitio web Centro Cultural">
+          <p>Escanea el código QR para abrir el sitio web del Centro Cultural.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Centro Cultural Fabián Órdenes Silva
+  </footer>
+</body>
+</html>
