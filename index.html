@@ -1,218 +1,190 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centro Cultural Fabián Ordenes Silva</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; color: #2c3e50; background-color: #f8f9fa; }
-        header { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3d3d3d 100%); color: white; padding: 20px 20px 40px 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
-        .header-content { display: flex; align-items: flex-start; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
-        .logos-top { display: flex; gap: 30px; align-items: center; margin-bottom: 30px; }
-        .logos-top img { height: 92px; width: auto; }
-        .header-text { flex: 1; text-align: center; }
-        header h1 { font-size: 2.8em; margin-bottom: 10px; font-weight: 700; color: #ffd700; }
-        header .tagline { font-size: 1.2em; color: #ffd700; font-weight: 500; }
-        .header-description { margin-top: 25px; padding: 25px; background: rgba(255, 215, 0, 0.08); border-left: 5px solid #ffd700; border-radius: 8px; }
-        .header-description p { font-size: 1.05em; color: #e8e8e8; margin-bottom: 15px; line-height: 1.7; }
-        .header-description .highlight { color: #ffd700; font-weight: 600; }
-        .header-description .emphasis { font-style: italic; color: #ffed4e; }
-        nav { background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #ffd700; }
-        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
-        nav a { color: white; text-decoration: none; padding: 18px 25px; display: block; transition: all 0.3s; font-weight: 500; border-bottom: 3px solid transparent; }
-        nav a:hover { background-color: rgba(255,215,0,0.1); border-bottom-color: #ffd700; }
-        .destacados-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
-        .destacado-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(255,215,0,0.2); transition: all 0.3s ease; border: 3px solid #ffd700; cursor: pointer; }
-        .destacado-card:hover { transform: translateY(-10px); box-shadow: 0 12px 32px rgba(255,215,0,0.4); }
-        .destacado-card img { width: 100%; height: 200px; object-fit: cover; }
-        .destacado-info { padding: 18px 15px; text-align: center; }
-        .destacado-info h3 { color: #1a1a1a; font-size: 1.1em; margin-bottom: 6px; font-weight: 700; }
-        .destacado-tipo { color: #ffd700; font-size: 0.9em; font-weight: 600; margin-bottom: 8px; }
-        .destacado-desc { color: #424242; font-size: 0.9em; line-height: 1.4; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
-        section { margin: 50px 0; padding: 45px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 6px solid #ffd700; }
-        section h2 { color: #1a1a1a; margin-bottom: 25px; font-size: 2.5em; font-weight: 700; border-bottom: 3px solid #ffd700; padding-bottom: 15px; }
-        section p { margin-bottom: 18px; text-align: justify; font-size: 1.05em; color: #424242; }
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .gallery-item { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; }
-        .gallery-item:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(255,215,0,0.2); }
-        .gallery-item img { width: 100%; height: 250px; object-fit: cover; }
-        .gallery-item h3 { padding: 15px; color: #1a1a1a; font-size: 1.2em; }
-        .contact-section { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 30px; align-items: center; }
-        .contact-info { display: flex; flex-direction: column; gap: 20px; }
-        .contact-item { display: flex; gap: 15px; align-items: flex-start; }
-        .contact-item strong { color: #ffd700; font-size: 1.1em; min-width: 120px; }
-        .qr-container { text-align: center; }
-        .qr-container img { max-width: 200px; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
-        .qr-container h3 { color: #1a1a1a; margin-bottom: 15px; }
-        .qr-container p { margin-top: 15px; color: #666; font-size: 0.9em; }
-        .activity-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #1a1a1a; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 4px 12px rgba(255,215,0,0.3); border: none; cursor: pointer; }
-        .activity-button:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(255,215,0,0.5); }
-        .contador-visitas { text-align: center; font-size: 1.2em; font-weight: 700; color: #1a1a1a; margin-top: 20px; padding: 15px; background: #fff9e6; border-radius: 8px; border-left: 4px solid #ffd700; }
-        .contador-visitas span { color: #ffd700; font-size: 1.5em; }
-        footer { background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 3px solid #ffd700; }
-        footer p { margin-bottom: 12px; font-weight: 500; }
-        .modal-imagen { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.8); }
-        .modal-contenido { margin: 40px auto; max-width: 900px; text-align: center; }
-        .modal-contenido img { width: 100%; height: auto; border-radius: 10px; }
-        .modal-cerrar { color: #fff; float: right; font-size: 32px; font-weight: bold; margin-right: 20px; cursor: pointer; }
-        @media (max-width: 768px) { .header-content { flex-direction: column; } .logos-top { justify-content: center; margin-bottom: 20px; } .contact-section { grid-template-columns: 1fr; } }
-    </style>
+  <meta charset="UTF-8">
+  <title>Centro Cultural Fabián Órdenes Silva</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f5f5f5;
+    }
+    header {
+      background: #000;
+      color: #f5c542;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 26px;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 5px 0 0;
+      font-size: 14px;
+    }
+    nav {
+      background: #181818;
+      padding: 10px 0;
+      text-align: center;
+    }
+    nav a {
+      color: #f5c542;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    main {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 0 15px 40px;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .hero h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+      color: #f5c542;
+    }
+    .hero p {
+      margin: 5px 0;
+      font-size: 14px;
+    }
+    .imagenes-principales {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .imagenes-principales img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 2px solid #f5c542;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.8);
+    }
+    section {
+      margin-top: 30px;
+    }
+    section h3 {
+      color: #f5c542;
+      border-bottom: 1px solid #333;
+      padding-bottom: 5px;
+      font-size: 18px;
+    }
+    section p, section ul {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    ul {
+      padding-left: 18px;
+    }
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 12px;
+    }
+    .contacto {
+      margin-top: 10px;
+      font-size: 13px;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 20px;
+      }
+      .hero h2 {
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <div class="logos-top">
-                <img src="images/centro/logofabian.jpg" alt="Logo Fabian">
-                <img src="images/centro/estibadores.jpg" alt="Estibadores">
-                <img src="images/centro/logoidc.jpg" alt="Logo IDC">
-            </div>
-            <div class="header-text">
-                <h1>Centro Cultural Fabián Ordenes Silva</h1>
-                <div class="tagline">Cultura, memoria y artes para la comunidad portuaria</div>
-                <div class="header-description">
-                    <p><span class="highlight">Fabián Ordenes Silva</span> fue más que un portuario: fue un <span class="emphasis">visionario cultural</span> que comprendió que la verdadera riqueza de un pueblo está en su <span class="highlight">memoria, su identidad y sus artes</span>. Con dotaciones artísticas y una profunda sensibilidad humana, dejó un legado de transformación comunitaria.</p>
-                    <p>Este espacio es un <span class="highlight">acto de resistencia creativa</span>, donde la cultura portuaria cobra vida, donde la memoria se honra y donde las artes tejen la historia de nuestro territorio. <span class="emphasis">Aquí se respira el corazón del trabajo, la solidaridad y la dignidad de los estibadores.</span></p>
-                    <p>💙 <span class="highlight">Te invitamos a ti, trabajador portuario, familia, amigo, vecino</span> a ser parte de este movimiento. Ven a crear, a aprender, a recordar, a encontrarte con otros en un espacio donde el arte nos hace más humanos, donde la memoria nos hace más fuertes, y donde <span class="emphasis">la comunidad es el centro de todo.</span></p>
-                </div>
-            </div>
-        </div>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="actividades.html">Actividades</a></li>
-            <li><a href="teatro.html">Teatro</a></li>
-            <li><a href="musica.html">Música</a></li>
-            <li><a href="danza.html">Danza</a></li>
-            <li><a href="literatura.html">Literatura</a></li>
-            <li><a href="pintura.html">Pintura</a></li>
-            <li><a href="cine.html">Cine</a></li>
-            <li><a href="fotografia.html">Fotografía</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+  <header>
+    <h1>Centro Cultural Fabián Órdenes Silva</h1>
+    <p>Espacio comunitario para las artes, la memoria y la organización social.</p>
+  </header>
 
-    <div class="container" style="padding-top: 60px; padding-bottom: 20px;">
-        <h2 style="text-align: center; margin-bottom: 40px; color: #1a1a1a;">Nuestros Destacados</h2>
-        <div class="destacados-grid">
-            <div class="destacado-card" data-imagen="images/centro/clota1.jpg">
-                <img src="images/centro/clota1.jpg" alt="CLOTARIO">
-                <div class="destacado-info">
-                    <h3>CLOTARIO</h3>
-                    <p class="destacado-tipo">El documental</p>
-                    <p class="destacado-desc">Historias y memorias de nuestra comunidad portuaria.</p>
-                </div>
-            </div>
+  <nav>
+    <a href="#quienes-somos">Quiénes somos</a>
+    <a href="#talleres">Talleres</a>
+    <a href="#actividades">Actividades</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-            <div class="destacado-card" data-imagen="images/centro/escuela3.jpg">
-                <img src="images/centro/escuela3.jpg" alt="Escuela 3">
-                <div class="destacado-info">
-                    <h3>Talleres Comunitarios</h3>
-                    <p class="destacado-tipo">Talleres culturales</p>
-                    <p class="destacado-desc">Encuentros para portuarios, familias, amigos y vecinos.</p>
-                </div>
-            </div>
+  <main>
+    <section class="hero">
+      <h2>Bienvenidas y bienvenidos al Centro Cultural</h2>
+      <p>Un lugar abierto al barrio para el teatro, la música, la danza, la literatura, el cine y la fotografía.</p>
+      <p>Trabajamos con y para la comunidad, desde la memoria portuaria hasta los nuevos proyectos artísticos.</p>
 
-            <div class="destacado-card" data-imagen="images/centro/escuela4.jpg">
-                <img src="images/centro/escuela4.jpg" alt="Escuela 4">
-                <div class="destacado-info">
-                    <h3>Formación y Artes</h3>
-                    <p class="destacado-tipo">Memoria y creación</p>
-                    <p class="destacado-desc">Espacios de formación y creación comunitaria.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+      <!-- Imágenes principales -->
+      <div class="imagenes-principales">
+        <img src="imagen/clota1.jpg" alt="Fotografía clota centro cultural">
+        <img src="imagen/estobadores.jpg" alt="Fotografía estibadores puerto">
+      </div>
+    </section>
 
-    <div class="container">
-        <!-- Secciones de inicio, actividades, teatro, música, danza, literatura, pintura, cine, fotografía iguales a tu versión anterior -->
-        <!-- (las mantengo tal como las enviaste, solo omitidas aquí por espacio) -->
-        <!-- ... pega aquí exactamente tus mismas secciones ... -->
+    <section id="quienes-somos">
+      <h3>Quiénes somos</h3>
+      <p>
+        El Centro Cultural Fabián Órdenes Silva nace como un espacio independiente y autogestionado,
+        levantado por trabajadores, artistas y vecinas del sector.
+      </p>
+      <p>
+        Nuestro objetivo es sostener un lugar de encuentro para la creación, la formación y la memoria,
+        con énfasis en la historia obrera y portuaria.
+      </p>
+    </section>
 
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <div class="contact-section">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <strong>📞 Teléfono:</strong>
-                        <span><a href="tel:+56976772053" style="color: #424242; text-decoration: none;">+56 9 7677 2053</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📧 Email:</strong>
-                        <span><a href="mailto:Centroculturalfabianordenes@gmail.com" style="color: #424242; text-decoration: none;">Centroculturalfabianordenes@gmail.com</a></span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>📍 Dirección:</strong>
-                        <span>El Mirador 788, La Chocota<br>Puchuncaví</span>
-                    </div>
-                    <div class="contact-item">
-                        <strong>🕑 Horario:</strong>
-                        <span>Lunes a Viernes: 9:00 - 18:00<br>Sábado: 10:00 - 16:00<br>Domingo: Cerrado</span>
-                    </div>
-                </div>
-                <div class="qr-container">
-                    <h3>Visítanos en Línea</h3>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=http://a5l.e78.mytemp.website" alt="QR">
-                    <p>a5l.e78.mytemp.website</p>
-                </div>
-            </div>
-            <div class="contador-visitas">Visitantes: <span id="contadorNumero">0</span></div>
-        </section>
-    </div>
-    <footer>
-        <p>&copy; 2025 Centro Cultural Fabián Ordenes Silva. Todos los derechos reservados.</p>
-        <p>Dedicado a la promoción de la cultura, el arte y la memoria de nuestra comunidad portuaria.</p>
-    </footer>
+    <section id="talleres">
+      <h3>Talleres y formación</h3>
+      <ul>
+        <li>Teatro y actuación para jóvenes y personas adultas.</li>
+        <li>Talleres de danza y movimiento para todas las edades.</li>
+        <li>Música, canto y ensambles instrumentales.</li>
+        <li>Fotografía, cine y audiovisual comunitario.</li>
+        <li>Lectura, escritura creativa y mediación de lectura.</li>
+      </ul>
+    </section>
 
-    <div id="modalImagen" class="modal-imagen">
-        <span class="modal-cerrar">&times;</span>
-        <div class="modal-contenido">
-            <img id="modalImg" src="" alt="Imagen completa">
-        </div>
-    </div>
+    <section id="actividades">
+      <h3>Actividades y programación</h3>
+      <p>
+        Durante el año realizamos funciones de teatro, ciclos de cine, recitales, exposiciones,
+        conversatorios y jornadas de memoria vinculadas al mundo portuario y al territorio.
+      </p>
+      <p>
+        También abrimos el espacio para organizaciones sociales, sindicatos y colectivos barriales
+        que necesiten un lugar para reunirse y desarrollar sus iniciativas.
+      </p>
+    </section>
 
-    <script>
-        // CONTADOR DE VISITAS POR NAVEGADOR
-        let contadorVisitas = localStorage.getItem('contadorVisitasCentro');
+    <section id="contacto">
+      <h3>Contacto</h3>
+      <p class="contacto">
+        Dirección: (agregar dirección física del centro cultural).<br>
+        Correo: contacto@centroculturalfos.cl<br>
+        Teléfono: +56 9 0000 0000
+      </p>
+      <p class="contacto">
+        Muy pronto compartiremos nuestras redes sociales y un calendario detallado de actividades.
+      </p>
+    </section>
+  </main>
 
-        if (!contadorVisitas) {
-            contadorVisitas = 0;
-        }
-
-        contadorVisitas = parseInt(contadorVisitas) + 1;
-
-        localStorage.setItem('contadorVisitasCentro', contadorVisitas);
-
-        document.getElementById('contadorNumero').textContent = contadorVisitas;
-
-        // LÓGICA DEL MODAL DE IMÁGENES
-        const destacados = document.querySelectorAll('.destacado-card');
-        const modal = document.getElementById('modalImagen');
-        const modalImg = document.getElementById('modalImg');
-        const cerrar = document.querySelector('.modal-cerrar');
-
-        destacados.forEach(card => {
-            card.addEventListener('click', () => {
-                const src = card.getAttribute('data-imagen');
-                modalImg.src = src;
-                modal.style.display = 'block';
-            });
-        });
-
-        cerrar.addEventListener('click', () => {
-            modal.style.display = 'none';
-            modalImg.src = '';
-        });
-
-        window.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                modalImg.src = '';
-            }
-        });
-    </script>
+  <footer>
+    &copy; Centro Cultural Fabián Órdenes Silva
+  </footer>
 </body>
 </html>
