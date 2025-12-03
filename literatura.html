@@ -1,1 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Literatura - Centro Cultural Fabián Ordenes Silva</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.8; color: #2c3e50; background-color: #f8f9fa; }
+        header { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #3d3d3d 100%); color: white; padding: 40px 20px; box-shadow: 0 8px 16px rgba(0,0,0,0.3); }
+        .header-content { display: flex; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+        .logos-top { display: flex; gap: 30px; align-items: center; }
+        .logos-top img { height: 80px; width: auto; }
+        .header-text { flex: 1; text-align: center; }
+        header h1 { font-size: 2.8em; margin-bottom: 10px; font-weight: 700; color: #ffd700; }
+        header .tagline { font-size: 1.2em; color: #ffd700; font-weight: 500; }
+        header p { font-size: 1em; color: #e8e8e8; margin-top: 10px; }
+        nav { background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #ffd700; }
+        nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+        nav a { color: white; text-decoration: none; padding: 18px 25px; display: block; transition: all 0.3s; font-weight: 500; border-bottom: 3px solid transparent; }
+        nav a:hover { background-color: rgba(255,215,0,0.1); border-bottom-color: #ffd700; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        section { margin: 50px 0; padding: 45px; background: white; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 6px solid #ffd700; }
+        section h2 { color: #1a1a1a; margin-bottom: 25px; font-size: 2.5em; font-weight: 700; border-bottom: 3px solid #ffd700; padding-bottom: 15px; }
+        section p { margin-bottom: 18px; text-align: justify; font-size: 1.05em; color: #424242; }
+        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .gallery-item { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; }
+        .gallery-item:hover { transform: translateY(-8px); box-shadow: 0 8px 20px rgba(255,215,0,0.2); }
+        .gallery-item img { width: 100%; height: 250px; object-fit: cover; }
+        .gallery-item h3 { padding: 15px; color: #1a1a1a; font-size: 1.2em; }
+        .activity-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #1a1a1a; text-decoration: none; border-radius: 8px; font-weight: 700; font-size: 1.1em; transition: all 0.3s; box-shadow: 0 4px 12px rgba(255,215,0,0.3); border: none; cursor: pointer; }
+        .activity-button:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(255,215,0,0.5); }
+        footer { background: linear-gradient(90deg, #1a1a1a 0%, #2d2d2d 100%); color: white; text-align: center; padding: 40px 20px; margin-top: 60px; border-top: 3px solid #ffd700; }
+        footer p { margin-bottom: 12px; font-weight: 500; }
+        @media (max-width: 768px) { .header-content { flex-direction: column; } .logos-top { justify-content: center; margin-bottom: 20px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logos-top">
+                <img src="images/centro/logofabian.jpg" alt="Logo Fabián">
+                <img src="images/centro/logoidc.jpg" alt="Logo IDC">
+                <img src="images/centro/logoestibadores.jpg" alt="Logo Estibadores">
+            </div>
+            <div class="header-text">
+                <h1>Centro Cultural Fabián Ordenes Silva</h1>
+                <div class="tagline">Un Lugar para la Cultura, las Artes y la Memoria</div>
+                <p>Preservando nuestras tradiciones, celebrando el arte y enriqueciendo la memoria colectiva.</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="actividades.html">Actividades</a></li>
+            <li><a href="teatro.html">Teatro</a></li>
+            <li><a href="musica.html">Música</a></li>
+            <li><a href="danza.html">Danza</a></li>
+            <li><a href="literatura.html">Literatura</a></li>
+            <li><a href="pintura.html">Pintura</a></li>
+            <li><a href="cine.html">Cine</a></li>
+            <li><a href="fotografia.html">Fotografía</a></li>
+            <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section>
+            <h2>📚 Literatura</h2>
+            <p>La literatura es la voz de la comunidad. A través de talleres de escritura, lecturas públicas y encuentros literarios, celebramos las historias de nuestra gente y preservamos la memoria cultural. La literatura nos permite explorar mundos, entender mejor la realidad y conectar profundamente con otros.</p>
+            <p>Ofrecemos talleres de poesía, narrativa, crónica y escritura creativa. Organizamos círculos de lectura, encuentros con autores locales y encuentros literarios donde compartir textos. Nuestro objetivo es fomentar la escritura como herramienta de expresión personal y memoria colectiva.</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="images/centro/literatura1.jpg" alt="Escritura"><h3>Escritura</h3></div>
+                <div class="gallery-item"><img src="images/centro/literatura2.jpg" alt="Lectura"><h3>Lectura</h3></div>
+                <div class="gallery-item"><img src="images/centro/literatura3.jpg" alt="Poesía"><h3>Poesía</h3></div>
+            </div>
+            <a href="index.html#contacto" class="activity-button">Participar en Literatura</a>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2025 Centro Cultural Fabián Ordenes Silva. Todos los derechos reservados.</p>
+        <p>Dedicado a la promoción de la cultura, el arte y la memoria de nuestra comunidad portuaria.</p>
+    </footer>
+</body>
+</html>
 
