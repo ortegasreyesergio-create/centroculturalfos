@@ -78,10 +78,10 @@
       font-size: 14px;
     }
 
-    /* Carrusel */
+    /* Carrusel reducido ~40% */
     .carrusel {
       position: relative;
-      max-width: 60%;   /* 40% más pequeño aprox. */
+      max-width: 60%;
       margin: 20px auto;
       overflow: hidden;
       border-radius: 8px;
@@ -145,6 +145,20 @@
     }
     .destacados-extra h3 {
       margin-top: 15px;
+    }
+    .boton-mini {
+      display: inline-block;
+      margin-top: 6px;
+      padding: 6px 12px;
+      background: #f5c542;
+      color: #111;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+    .boton-mini:hover {
+      background: #ffd45c;
     }
 
     footer {
@@ -267,19 +281,24 @@
       </p>
 
       <div class="destacados-extra">
-        <h3>Textos escritos por vecinos y estibadores</h3>
+        <h3>Relatos escritos por vecinos y estibadores</h3>
         <p>
-          En nuestra sección de <a href="literatura.html" style="color:#f5c542;">Literatura</a> puedes leer crónicas,
-          recuerdos y relatos creados por vecinas, vecinos y estibadores de Quintero‑Ventanas.
-          Una invitación a conocer la memoria del puerto contada en primera persona.
+          En la sección de
+          <a href="literatura.html" style="color:#f5c542; font-weight:bold;">Literatura</a>
+          encontrarás crónicas, recuerdos y relatos creados por vecinas, vecinos y estibadores de
+          Quintero‑Ventanas. Textos breves que recogen la memoria viva del puerto y sus familias.
         </p>
+        <a href="literatura.html" class="boton-mini">Leer textos de la comunidad</a>
 
-        <h3>Esculturas de Francisca Fernández</h3>
+        <h3>Esculturas de Francisca Fernández, estibadora</h3>
         <p>
-          Te invitamos también a visitar la sección de <a href="fotografia.html" style="color:#f5c542;">Fotografía</a>,
-          donde encontrarás un registro especial de las esculturas realizadas por la estibadora
+          Te invitamos a visitar la sección de
+          <a href="fotografia.html" style="color:#f5c542; font-weight:bold;">Fotografía</a>,
+          donde se presenta el registro de las esculturas creadas por la estibadora
           Francisca Fernández, trabajadora del puerto de Quintero‑Ventanas.
+          Una mirada al oficio portuario a través del arte y la forma.
         </p>
+        <a href="fotografia.html" class="boton-mini">Ver esculturas en fotografías</a>
       </div>
 
       <div class="contador-visitas">
@@ -393,3 +412,4 @@
   </script>
 </body>
 </html>
+
