@@ -81,7 +81,7 @@
     /* Carrusel */
     .carrusel {
       position: relative;
-      max-width: 100%;
+      max-width: 60%;   /* 40% más pequeño aprox. */
       margin: 20px auto;
       overflow: hidden;
       border-radius: 8px;
@@ -138,6 +138,15 @@
       color: #ccc;
       text-align: right;
     }
+
+    .destacados-extra {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .destacados-extra h3 {
+      margin-top: 15px;
+    }
+
     footer {
       background: #000;
       color: #aaa;
@@ -189,6 +198,9 @@
       }
       .hero h2 {
         font-size: 18px;
+      }
+      .carrusel {
+        max-width: 90%;
       }
       .contacto-datos {
         flex-direction: column;
@@ -253,6 +265,22 @@
         Te invitamos a la única presentación en la sede del Sindicato Profesional de Estibadores
         Quintero‑Ventanas, un encuentro para compartir cine, memoria y conversación con la familia portuaria.
       </p>
+
+      <div class="destacados-extra">
+        <h3>Textos escritos por vecinos y estibadores</h3>
+        <p>
+          En nuestra sección de <a href="literatura.html" style="color:#f5c542;">Literatura</a> puedes leer crónicas,
+          recuerdos y relatos creados por vecinas, vecinos y estibadores de Quintero‑Ventanas.
+          Una invitación a conocer la memoria del puerto contada en primera persona.
+        </p>
+
+        <h3>Esculturas de Francisca Fernández</h3>
+        <p>
+          Te invitamos también a visitar la sección de <a href="fotografia.html" style="color:#f5c542;">Fotografía</a>,
+          donde encontrarás un registro especial de las esculturas realizadas por la estibadora
+          Francisca Fernández, trabajadora del puerto de Quintero‑Ventanas.
+        </p>
+      </div>
 
       <div class="contador-visitas">
         Visitas a este sitio desde este navegador: <span id="visit-count">0</span>
