@@ -78,10 +78,10 @@
       font-size: 14px;
     }
 
-    /* Carrusel reducido ~40% */
+    /* Carrusel reducido ~30% */
     .carrusel {
       position: relative;
-      max-width: 60%;
+      max-width: 50%;
       margin: 20px auto;
       overflow: hidden;
       border-radius: 8px;
@@ -145,6 +145,23 @@
     }
     .destacados-extra h3 {
       margin-top: 15px;
+    }
+    .destacado-box {
+      background: #181818;
+      border-left: 4px solid #f5c542;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+    .destacado-box h4 {
+      color: #f5c542;
+      margin-top: 0;
+      font-size: 16px;
+    }
+    .destacado-box p {
+      margin: 8px 0;
+      font-size: 13px;
+      line-height: 1.6;
     }
     .boton-mini {
       display: inline-block;
@@ -263,7 +280,7 @@
         Afiche del documental Clotario y actividades formativas con escuelas, familias y comunidad portuaria.
       </p>
 
-      <!-- Carrusel de fotos -->
+      <!-- Carrusel reducido 30% -->
       <div class="carrusel" id="carrusel">
         <img src="imagen/clota1.jpg" alt="Documental CLOTARIO" class="activa">
         <img src="imagen/escuela3.jpg" alt="Talleres comunitarios">
@@ -281,28 +298,39 @@
       </p>
 
       <div class="destacados-extra">
-        <h3>Relatos escritos por vecinos y estibadores</h3>
-        <p>
-          En la sección de
-          <a href="literatura.html" style="color:#f5c542; font-weight:bold;">Literatura</a>
-          encontrarás crónicas, recuerdos y relatos creados por vecinas, vecinos y estibadores de
-          Quintero‑Ventanas. Textos breves que recogen la memoria viva del puerto y sus familias.
-        </p>
-        <a href="literatura.html" class="boton-mini">Leer textos de la comunidad</a>
+        <div class="destacado-box">
+          <h4>📚 Escritos entretenidos y reflexivos de la comunidad</h4>
+          <p>
+            <strong>"El trencito"</strong> – Un relato divertido y entrañable que juega con la memoria,
+            la imaginación y el humor de quienes habitan el puerto. Una lectura ligera cargada de ternura.
+          </p>
+          <p>
+            <strong>"Del tiempo, la soledad y la unión"</strong> – Un texto reflexivo que invita a pensar
+            sobre la esperanza, la solidaridad y cómo el trabajo comunitario transforma la soledad en encuentro.
+            Una pieza profunda y esperanzadora.
+          </p>
+          <a href="literatura.html" class="boton-mini">Leer los textos completos</a>
+        </div>
 
-        <h3>Esculturas de Francisca Fernández, estibadora</h3>
-        <p>
-          Te invitamos a visitar la sección de
-          <a href="fotografia.html" style="color:#f5c542; font-weight:bold;">Fotografía</a>,
-          donde se presenta el registro de las esculturas creadas por la estibadora
-          Francisca Fernández, trabajadora del puerto de Quintero‑Ventanas.
-          Una mirada al oficio portuario a través del arte y la forma.
-        </p>
-        <a href="fotografia.html" class="boton-mini">Ver esculturas en fotografías</a>
-      </div>
+        <div class="destacado-box">
+          <h4>🎨 Esculturas de Francisca Fernández, estibadora eventual del puerto</h4>
+          <p>
+            Francisca Fernández es una trabajadora portuaria eventual cuya creatividad brota del sacrificio
+            y la dignidad de quienes caminan los muelles. Sus esculturas trasforman el hierro y la piedra
+            en testimonio de la fuerza obrera, reflejando el esfuerzo silencioso de los estibadores que cargan
+            el peso de la economía con sus manos.
+          </p>
+          <p>
+            Cada obra es un acto de resistencia y belleza, un homenaje a quienes trabajan sin descanso,
+            levantando no solo mercancías sino dignidad y memoria. Su arte nace de la convicción de que
+            el trabajo manual merece ser celebrado, recordado y transformado en creación.
+          </p>
+          <a href="fotografia.html" class="boton-mini">Ver esculturas en fotografías</a>
+        </div>
 
-      <div class="contador-visitas">
-        Visitas a este sitio desde este navegador: <span id="visit-count">0</span>
+        <div class="contador-visitas">
+          Visitas a este sitio desde este navegador: <span id="visit-count">0</span>
+        </div>
       </div>
     </section>
 
